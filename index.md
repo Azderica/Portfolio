@@ -12,7 +12,7 @@ homepage:
   text: TIL blog
 ---
 
-# Myeonghun Park Portfolio
+# Myeonghun Park **Portfolio**
 
 <!--
 include contact information from the front matter
