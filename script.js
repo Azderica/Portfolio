@@ -27,8 +27,13 @@ document.addEventListener("DOMContentLoaded", function () {
 // 컴포넌트 로딩 함수
 async function loadComponent(id, path) {
   try {
+    // 현재 환경이 로컬인지 GitHub Pages인지 확인
+    const isLocal =
+      window.location.hostname === "localhost" ||
+      window.location.hostname === "127.0.0.1";
+
     // GitHub Pages의 repository 이름을 기반으로 한 기본 경로 설정
-    const basePath = "/Portfolio"; // 여기를 본인의 repository 이름으로 변경하세요
+    const basePath = isLocal ? "" : "/Portfolio"; // 여기를 본인의 repository 이름으로 변경하세요
     const response = await fetch(`${basePath}/components/${path}`);
 
     if (!response.ok) {
