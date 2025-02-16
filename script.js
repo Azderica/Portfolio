@@ -27,33 +27,43 @@ document.addEventListener("DOMContentLoaded", function () {
 // 컴포넌트 로딩 함수
 async function loadComponent(id, path) {
   try {
-    // repository-name이 있는 경우
-    const basePath = "/{repository-name}";
+    // GitHub Pages의 repository 이름을 기반으로 한 기본 경로 설정
+    const basePath = "/Portfolio"; // 여기를 본인의 repository 이름으로 변경하세요
     const response = await fetch(`${basePath}/components/${path}`);
-    // 또는 username.github.io인 경우
-    // const response = await fetch(`/components/${path}`);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
     const html = await response.text();
     document.getElementById(id).innerHTML = html;
   } catch (error) {
     console.error(`Error loading ${path}:`, error);
+    document.getElementById(
+      id
+    ).innerHTML = `<p>Error loading content: ${error.message}</p>`;
   }
 }
 
 // 페이지 로드 시 모든 컴포넌트 로딩
 document.addEventListener("DOMContentLoaded", async function () {
-  await Promise.all([
-    loadComponent("introduction", "introduction.html"),
-    loadComponent("experience", "experience.html"),
-    loadComponent("education", "education.html"),
-    loadComponent("skills", "skills.html"),
-    loadComponent("awards", "awards.html"),
-    loadComponent("language", "language.html"),
-    loadComponent("links", "links.html"),
-  ]);
+  try {
+    await Promise.all([
+      loadComponent("introduction", "introduction.html"),
+      loadComponent("experience", "experience.html"),
+      loadComponent("education", "education.html"),
+      loadComponent("skills", "skills.html"),
+      loadComponent("awards", "awards.html"),
+      loadComponent("language", "language.html"),
+      loadComponent("links", "links.html"),
+    ]);
 
-  // 프로젝트 토글 초기화 (기존 코드)
-  const projectDetails = document.querySelectorAll(".project-details");
-  projectDetails.forEach((detail) => {
-    detail.classList.add("collapsed");
-  });
+    // 프로젝트 토글 초기화
+    const projectDetails = document.querySelectorAll(".project-details");
+    projectDetails.forEach((detail) => {
+      detail.classList.add("collapsed");
+    });
+  } catch (error) {
+    console.error("Error loading components:", error);
+  }
 });
