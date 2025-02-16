@@ -12,33 +12,11 @@ homepage:
   text: TIL blog
 ---
 
-# Myeonghun Park **Portfolio**
-
-## Education
-
-### **경북대학교** `2015.3 ~ 2020.8`
-
-> 학사, 컴퓨터 공학, 4.15 / 4.5 (150)
-
-- 7학기 조기 졸업 및 우수 졸업생 (Summa Cum Laude)
-- 11개의 수상 및 표창 경험
-- 다양한 프로젝트 및 실습 경험
-- 개발 언어: C/C++, C#, Java, Python, JavaScript, TypeScript, Swift
-- 알고리즘 스터디 리더 및 머신러닝 스터디 팀장
-
-### **LG Soft India Internship** `2019.7`
-
-- 경북대학교 국제 인턴십 프로그램 참가
-- 경북대학교 및 CHRIST University 대표
-- 프로젝트: "Removing Fine Dust"
-  - AWS 서버, IoT 서비스, Arduino
-- 수상:
-  - LG WebOS IoT Contest 3위
-  - WIZNet IoT Contest 2위
+# 박명훈 **포트폴리오**
 
 ## Experience
 
-### 이베이코리아(지마켓) `2020.6 ~ 현재`
+### 지마켓(이베이코리아) `2020.6 ~ 현재`
 
 - 역할 : Seller 도메인 실무 리드
 - 주요 업무
@@ -52,12 +30,37 @@ homepage:
   - Gmarket 코딩 테스트 관리자
   - Gmarket 기술행사 지원
   - Gmarket 기술문화 지원
+- 참고 링크
+  - [달리는 인증 서비스의 NoSQL을 바꾸자. - 전략편](https://dev.gmarket.com/77)
+  - [달리는 인증 서비스의 NoSQL을 바꾸자. - 실전편](https://dev.gmarket.com/78)
 
 ## Technical Skills
 
 - Java, Spring MVC, Spring API, C#, .NET
 - React(Next.js), Vue.js
 - Redis, Couchbase, MongoDB, MSSQL
+
+## Education
+
+### 경북대학교 `2015.3 ~ 2020.8`
+
+> 학사, 컴퓨터 공학, 4.15 / 4.5 (150)
+
+- 7학기 조기 졸업 및 우수 졸업생 (Summa Cum Laude)
+- 11개의 수상 및 표창 경험
+- 다양한 프로젝트 및 실습 경험
+- 개발 언어: C/C++, C#, Java, Python, JavaScript, TypeScript, Swift
+- 알고리즘 스터디 리더 및 머신러닝 스터디 팀장
+
+### LG Soft India Internship `2019.7`
+
+- 경북대학교 국제 인턴십 프로그램 참가
+- 경북대학교 및 CHRIST University 대표
+- 프로젝트: "Removing Fine Dust"
+  - AWS 서버, IoT 서비스, Arduino
+- 수상:
+  - LG WebOS IoT Contest 3위
+  - WIZNet IoT Contest 2위
 
 ## Honors & Awards
 
