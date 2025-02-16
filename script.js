@@ -27,7 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
 // 컴포넌트 로딩 함수
 async function loadComponent(id, path) {
   try {
-    const response = await fetch(`components/${path}`);
+    // repository-name이 있는 경우
+    const basePath = "/{repository-name}";
+    const response = await fetch(`${basePath}/components/${path}`);
+    // 또는 username.github.io인 경우
+    // const response = await fetch(`/components/${path}`);
     const html = await response.text();
     document.getElementById(id).innerHTML = html;
   } catch (error) {
