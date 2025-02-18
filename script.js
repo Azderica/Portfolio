@@ -72,3 +72,16 @@ document.addEventListener("DOMContentLoaded", async function () {
     console.error("Error loading components:", error);
   }
 });
+
+window.addEventListener("DOMContentLoaded", function () {
+  const isLocal =
+    window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1";
+  const basePath = isLocal ? "" : "/Portfolio"; // repository 이름에 맞게 수정
+
+  // 프로필 이미지 경로 수정
+  const profileImage = document.querySelector(".profile-image");
+  if (profileImage) {
+    profileImage.src = `${basePath}/static/profile.jpg`;
+  }
+});
