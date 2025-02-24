@@ -106,6 +106,17 @@ h3 {
 }
 
 /* Project Styles */
+.project-details {
+    display: block;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-details.collapsed {
+    display: none !important;
+}
+
 .project {
     position: relative;
     margin-bottom: 2rem;
@@ -116,10 +127,9 @@ h3 {
     transition: all 0.2s ease;
 }
 
-.project:hover {
+.project.active {
     border-color: var(--primary-color);
     box-shadow: 0 8px 24px rgba(124, 58, 237, 0.15);
-    transform: translateY(-2px);
 }
 
 .project-header {
@@ -145,36 +155,6 @@ h3 {
 
 .project-header:hover {
     background: rgba(255, 255, 255, 0.05);
-}
-
-.project-details {
-    display: block;
-    padding: 1rem;
-    margin-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.project-details h5 {
-    color: var(--accent-color);
-    font-size: 1.1rem;
-    margin: 1.5rem 0 1rem 0;
-}
-
-.project-details h5:first-child {
-    margin-top: 0;
-}
-
-.project-details ul {
-    color: var(--text-secondary);
-    margin: 0.5rem 0;
-}
-
-.project-details ul li {
-    margin-bottom: 0.5rem;
-}
-
-.project-details ul li:last-child {
-    margin-bottom: 0;
 }
 
 .toggle-icon {
@@ -425,41 +405,4 @@ ul:not(.contact):not(.skills):not(.links) li {
 .section, .skill-item, .project {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-}
-
-/* Project Toggle Styles */
-.project-details.collapsed {
-    display: none !important;
-}
-
-.project {
-    position: relative;
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-    background: var(--surface-color);
-    border-radius: var(--border-radius);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.2s ease;
-}
-
-.project.active {
-    border-color: var(--primary-color);
-    box-shadow: 0 8px 24px rgba(124, 58, 237, 0.15);
-}
-
-.project.active .project-header {
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.project.active .toggle-icon {
-    transform: translateY(-50%) rotate(180deg);
-}
-
-.toggle-icon {
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: transform 0.3s ease;
-    color: var(--accent-color);
 }
