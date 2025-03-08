@@ -24,6 +24,19 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// 이미지 경로 설정 함수
+function setProfileImagePath() {
+  const isLocal =
+    window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1";
+  const basePath = isLocal ? "" : "/Portfolio";
+
+  const profileImage = document.querySelector(".profile-image");
+  if (profileImage) {
+    profileImage.src = `${basePath}/static/profile.jpg`;
+  }
+}
+
 // 컴포넌트 로딩 함수
 async function loadComponent(id, path) {
   try {
@@ -39,6 +52,11 @@ async function loadComponent(id, path) {
 
     const html = await response.text();
     document.getElementById(id).innerHTML = html;
+
+    // introduction 컴포넌트가 로드된 후 이미지 경로 설정
+    if (id === "introduction") {
+      setProfileImagePath();
+    }
 
     // experience 컴포넌트가 로드된 후 토글 이벤트 초기화
     if (id === "experience") {
@@ -104,18 +122,5 @@ document.addEventListener("DOMContentLoaded", async function () {
     ]);
   } catch (error) {
     console.error("Error loading components:", error);
-  }
-});
-
-// 이미지 경로 설정
-window.addEventListener("DOMContentLoaded", function () {
-  const isLocal =
-    window.location.hostname === "localhost" ||
-    window.location.hostname === "127.0.0.1";
-  const basePath = isLocal ? "" : "/Portfolio";
-
-  const profileImage = document.querySelector(".profile-image");
-  if (profileImage) {
-    profileImage.src = `${basePath}/static/profile.jpg`;
   }
 });
